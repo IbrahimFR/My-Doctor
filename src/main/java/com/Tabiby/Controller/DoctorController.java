@@ -19,7 +19,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 /**
- * Created by zamalek on 9/17/2016.
+ * Created by ibrahimfouad on 9/17/2016.
  */
 @Controller
 @RequestMapping("/doctor")

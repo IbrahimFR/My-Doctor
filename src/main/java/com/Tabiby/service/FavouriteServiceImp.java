@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * Created by zamalek on 10/3/2016.
+ * Created by ibrahimfouad on 10/3/2016.
  */
 @Service("favouriteService")
 public class FavouriteServiceImp  implements  FavouriteService{

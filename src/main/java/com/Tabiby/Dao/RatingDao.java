@@ -7,7 +7,7 @@ import com.Tabiby.Model.Users;
 import java.util.List;
 
 /**
- * Created by zamalek on 9/16/2016.
+ * Created by ibrahimfouad on 9/16/2016.
  */
 public interface RatingDao {
     public void addRate(Rating rate);

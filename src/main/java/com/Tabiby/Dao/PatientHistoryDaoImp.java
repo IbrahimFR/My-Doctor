@@ -1,7 +1,7 @@
 package com.Tabiby.Dao;
 
 /**
- * Created by zamalek on 9/30/2016.
+ * Created by ibrahimfouad on 9/30/2016.
  */
 
 import com.Tabiby.Model.Clinics;

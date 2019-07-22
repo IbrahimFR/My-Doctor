@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * Created by zamalek on 9/16/2016.
+ * Created by ibrahimfouad on 9/16/2016.
  */
 
 @Service("ratingService")

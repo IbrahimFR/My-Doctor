@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * Created by zamalek on 10/3/2016.
+ * Created by ibrahimfouad on 10/3/2016.
  */
 @Repository("favouriteDao")
 public class FavouriteDaoImp implements  FavouriteDao{

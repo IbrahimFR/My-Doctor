@@ -3,7 +3,7 @@ package com.Tabiby.Model;
 import javax.persistence.*;
 
 /**
- * Created by zamalek on 8/11/2016.
+ * Created by ibrahimfouad on 8/11/2016.
  */
 @Entity
 @Table(name = "Files")

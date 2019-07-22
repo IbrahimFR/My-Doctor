@@ -5,7 +5,7 @@ import com.Tabiby.Model.ClinicAppointment;
 import java.util.List;
 
 /**
- * Created by zamalek on 10/21/2016.
+ * Created by ibrahimfouad on 10/21/2016.
  */
 public interface ClinicAppService {
 

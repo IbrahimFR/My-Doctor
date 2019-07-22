@@ -6,7 +6,7 @@ import java.util.List;
 import com.Tabiby.Model.Users;
 
 /**
- * Created by zamalek on 8/12/2016.
+ * Created by ibrahimfouad on 8/12/2016.
  */
 public interface UsersService {
     public void addUsers(Users user);

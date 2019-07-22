@@ -3,7 +3,7 @@ package com.Tabiby.Model;
 import javax.persistence.*;
 
 /**
- * Created by zamalek on 9/17/2016.
+ * Created by ibrahimfouad on 9/17/2016.
  */
 @Entity
 @Table(name = "UserServices")

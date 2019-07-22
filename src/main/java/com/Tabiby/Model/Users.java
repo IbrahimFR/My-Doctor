@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by zamalek on 8/7/2016.
+ * Created by ibrahimfouad on 8/7/2016.
  */
 @Entity
 @Table(name = "Users", uniqueConstraints = @UniqueConstraint(columnNames = {

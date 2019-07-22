@@ -10,7 +10,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 /**
- * Created by zamalek on 8/7/2016.
+ * Created by ibrahimfouad on 8/7/2016.
  */
 @Entity
 @Table(name = "Clinics", uniqueConstraints = @UniqueConstraint(columnNames = {

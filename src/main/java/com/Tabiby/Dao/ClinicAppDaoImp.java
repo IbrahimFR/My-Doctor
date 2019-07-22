@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * Created by zamalek on 10/21/2016.
+ * Created by ibrahimfouad on 10/21/2016.
  */
 @Repository("clinicAppDao")
 public class ClinicAppDaoImp implements  ClinicAppDao{
