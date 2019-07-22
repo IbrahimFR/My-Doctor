@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:c="http://www.springframework.org/schema/c" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<context:component-scan base-package="com.Tabiby.*">
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+
+
+	<!--<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">-->
+	<!--<property name="driverClassName" value="com.mysql.jdbc.Driver" />-->
+	<!--<property name="url" value="jdbc:mysql://185.93.245.77:3306/carthage_tabiby?useUnicode=true&amp;characterEncoding=UTF-8" />-->
+	<!--<property name="username" value="carthage_root" />-->
+	<!--<property name="password" value=")[-ub0n!Tg2T" />-->
+	<!--</bean>-->
+	  <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/tabibydashboard?useUnicode=true&amp;characterEncoding=UTF-8" />
+		<property name="username" value="root" />
+		<property name="password" value="" />
+
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan">
+			<list>
+				<value>com.Tabiby.Model</value>
+				<value>com.Tabiby.service</value>
+				<value>com.Tabiby.Dao</value>
+				<value>com.Tabiby.Controller</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">com.Tabiby.Controller.CustomMysqlDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.format_sql">false</prop>
+				<prop key="hibernate.connection.characterEncoding">utf8</prop>
+				<prop key="hibernate.current_session_context_class">thread</prop>
+				<prop key="hibernate.connection.CharSet">utf8</prop>
+				<prop key="hibernate.connection.characterEncoding">utf8</prop>
+				<prop key="hibernate.connection.useUnicode">true</prop>
+
+				<!-- <prop key="hbm2ddl.auto">create</prop> -->
+			</props>
+		</property>
+	</bean>
+
+
+	<!-- Users Data beans -->
+	<bean id="userDao" class="com.Tabiby.Dao.UsersDaoImp">
+		<property name="sessionFactory" ref="sessionFactory" />
+
+	</bean>
+
+	<bean id="userService" class="com.Tabiby.service.UsersServiceImp">
+		<property name="userDao" ref="userDao">
+		</property>
+
+	</bean>
+
+	<!-- Clinics Data beans -->
+	<bean id="clinicDao" class="com.Tabiby.Dao.ClinicDaoImp">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="clinicService" class="com.Tabiby.service.ClinicServiceImp">
+		<property name="clinicDao" ref="clinicDao">
+		</property>
+	</bean>
+	<!-- appointment Data bean -->
+	<bean id="appointmentDao" class="com.Tabiby.Dao.AppointmentDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="appointmentService" class="com.Tabiby.service.AppointmentServiceImp">
+		<property name="appointmentDao" ref="appointmentDao"></property>
+	</bean>
+	<!-- doctor Data bean -->
+	<bean id="doctorDao" class="com.Tabiby.Dao.DoctorDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="doctorService" class="com.Tabiby.service.DoctorServiceImp">
+		<property name="doctorDao" ref="doctorDao"></property>
+	</bean>
+	<!-- Reservation Data Beans -->
+	<bean id="reservationDao" class="com.Tabiby.Dao.ReservationDaoImp">
+	<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="reservationService" class="com.Tabiby.service.ReservationServiceImp">
+	<property name="reservationDao" ref="reservationDao"></property>
+	</bean>
+	<!-- File  -->
+	<bean id="fileUploadDao" class="com.Tabiby.Dao.FileUploadDaoImp">
+	<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="fileUploadService" class="com.Tabiby.service.FileUploadServiceImp">
+	<property name="fileUploadDao" ref="fileUploadDao"></property>
+	</bean>
+	<!-- Admins -->
+	<!--<bean id="adminDao" class="com.Tabiby.Dao.UserDaoImp">-->
+		<!--<property name="sessionFactory" ref="sessionFactory"></property>-->
+	<!--</bean>-->
+	<!--<bean id="adminService" class="com.Tabiby.service.UserServiceImp">-->
+		<!--<property name="adminDao" ref="adminDao"></property>-->
+	<!--</bean>-->
+	<!-- Ratings -->
+	<bean id="ratingDao" class="com.Tabiby.Dao.RatingDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="ratingService" class="com.Tabiby.service.RatingServiceImp">
+		<property name="ratingDao" ref="ratingDao"></property>
+	</bean>
+	<!-- Reviews -->
+	<bean id="reviewDao" class="com.Tabiby.Dao.ReviewDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="reviewService" class="com.Tabiby.service.ReviewServiceImp">
+		<property name="reviewDao" ref="reviewDao"></property>
+	</bean>
+	<!-- services -->
+	<bean id="ServiceClDao" class="com.Tabiby.Dao.ServiceClDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="serviceClService" class="com.Tabiby.service.ServiceClServiceImp">
+		<property name="ServiceClDao" ref="ServiceClDao"></property>
+	</bean>
+
+	<!-- medecine List -->
+	<bean id="medecineDao" class="com.Tabiby.Dao.MedecineDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="medecineService" class="com.Tabiby.service.MedecineServiceImp">
+		<property name="medecineDao" ref="medecineDao"></property>
+	</bean>
+	<!-- user history List -->
+	<bean id="patientHistoryDao" class="com.Tabiby.Dao.PatientHistoryDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="patientHistoryService" class="com.Tabiby.service.PatientHistoryServiveImp">
+		<property name="patientHistoryDao" ref="patientHistoryDao"></property>
+	</bean>
+	<!-- favourites -->
+	<bean id="favouriteDao" class="com.Tabiby.Dao.FavouriteDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="favouriteService" class="com.Tabiby.service.FavouriteServiceImp">
+		<property name="favouriteDao" ref="favouriteDao"></property>
+	</bean>
+	<!-- clinicApp -->
+	<bean id="clinicAppDao" class="com.Tabiby.Dao.ClinicAppDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="clinicAppService" class="com.Tabiby.service.ClinicAppServiceImp">
+		<property name="clinicAppDao" ref="clinicAppDao"></property>
+	</bean>
+	<!-- Notificatio -->
+	<bean id="notificationDao" class="com.Tabiby.Dao.NotificationDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="notificationService" class="com.Tabiby.service.NotificationServiceImp">
+		<property name="notificationDao" ref="notificationDao"></property>
+	</bean>
+	<!-- pic -->
+	<bean id="clinicPicDao" class="com.Tabiby.Dao.ClinicPicDaoImp">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="clinicPicService" class="com.Tabiby.service.ClinicPicServiceImp">
+		<property name="clinicPicDao" ref="clinicPicDao"></property>
+	</bean>
+	<bean id="multipartResolver"
+		  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- max upload size in bytes -->
+		<property name="maxUploadSize" value="20971520" /> <!-- 20MB -->
+
+		<!-- max size of file in memory (in bytes) -->
+		<property name="maxInMemorySize" value="1048576" /> <!-- 1MB -->
+
+	</bean>
+	<bean class="org.springframework.web.servlet.view.XmlViewResolver">
+		<property name="location" value="WEB-INF/jasper-views.xml"/>
+		<property name="order" value="0"/>
+	</bean>
+
+	<context:annotation-config />
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+</beans>

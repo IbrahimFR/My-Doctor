@@ -1,0 +1,79 @@
+body {
+	background: #eee;
+}
+
+.radius0 {
+	border-radius: 0;
+}
+
+.err-mes {
+	font-size: 12px;
+	line-height: 10px;
+	text-align: center;
+	color: #f00;
+	font-weight: bold;
+	padding-top: 6px;
+	margin-bottom: 0;
+}
+
+.err-mes-out {
+	font-size: 13px;
+	line-height: 10px;
+	text-align: center;
+	color: #31708F;
+	font-weight: bold;
+	padding-top: 6px;
+	margin-bottom: 0;
+}
+
+.form-login {
+	margin-top: 30px;
+	margin-bottom: 10px;
+	min-height: 510px;
+}
+
+#_email {
+	border-radius: 0;
+}
+
+#_password {
+	border-radius: 0;
+}
+
+.form-login .padingupdown {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.log-2 {
+	float: right;
+	font-size: 80%;
+	position: relative;
+	top: -10px
+}
+
+.log-1 {
+	margin-top: 50px;
+}
+
+.log-3 {
+	padding-top: 30px
+}
+
+.log-4 {
+	display: none
+}
+
+.log-5 {
+	margin-bottom: 25px
+}
+
+.log-6 {
+	margin-top: 10px
+}
+
+.log-7 {
+	border-top: 1px solid #888;
+	padding-top: 15px;
+	font-size: 85%
+}

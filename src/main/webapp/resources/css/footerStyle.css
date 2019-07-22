@@ -1,0 +1,13 @@
+.copy-right {
+    background: #6D6E71;
+    overflow: hidden;
+    min-height: 50px;
+    color: #ccc;
+
+
+}
+.copy-right p {
+    padding-top: 20px;
+    line-height: 25px;
+    font-size: 15px;
+}
