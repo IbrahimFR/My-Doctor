@@ -12,7 +12,7 @@
 		<hibernate.version>4.3.5.Final</hibernate.version>
 		<org.aspectj-version>1.7.4</org.aspectj-version>
 		<org.slf4j-version>1.7.5</org.slf4j-version>
-		<spring.security.config>4.0.2.RELEASE</spring.security.config>
+		<spring.security.config>4.2.17.RELEASE</spring.security.config>
 		<tiles.version>2.2.1</tiles.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
